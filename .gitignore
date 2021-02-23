@@ -5,6 +5,7 @@ foxModules/*.pyc
 foxModules/__pycache__/*
 Lib/*
 Scripts/*
+output/*
 *.spec
 *.exe
 *.pyc
