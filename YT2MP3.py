@@ -79,7 +79,11 @@ class Main(QMainWindow, ui.Ui_MainWindow):
         for i in tmp_list:
             if i!="" and i.find("watch?v=")>0:
                 tmp_count+=1
-                self.subDownloadAndSaveMp3(i)
+                try:
+                    self.subDownloadAndSaveMp3(i)
+                except:
+                    print(i+"下載出錯，跳過這個影片")
+                    continue
         if tmp_count>0:
             self.show_message("影片轉檔MP3完成!","MP3下載轉檔完成!\n所有的檔案存放於 output 資料夾...")
         else:
