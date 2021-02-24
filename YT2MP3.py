@@ -15,7 +15,9 @@ import pathlib,youtube_dl
 class Main(QMainWindow, ui.Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        self.save_dir=str(pathlib.Path().absolute())+"\\output\\"
+        # 在 win10 路徑是 \\ ，在 macos 路徑是 /
+        #self.save_dir=str(pathlib.Path().absolute())+"\\output\\"
+        self.save_dir=str(pathlib.Path().absolute())+"/output/"
         self.movie_list=set()
         #若資料夾不存在就新增資料夾
         pathlib.Path(self.save_dir).mkdir(parents=True, exist_ok=True)
@@ -94,6 +96,7 @@ class Main(QMainWindow, ui.Ui_MainWindow):
     def subDownloadAndSaveMp3(self,youtube_url):
         temp_filepath=self.save_dir+ '%(title)s-%(id)s.%(ext)s'
         ydl_opts = {
+            'nocheckcertificate' : True,
             'format': 'bestaudio/best', # choice of quality
             'extractaudio' : True,      # only keep the audio
             'audioformat' : 'mp3',      # convert to mp3
@@ -103,6 +106,7 @@ class Main(QMainWindow, ui.Ui_MainWindow):
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
             'preferredquality': '192',
+
             }],
             #'logger': MyLogger(),
             #'progress_hooks': [my_hook],
