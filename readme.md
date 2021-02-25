@@ -1,1 +1,1 @@
-# Youotube2MP3 程式 ( 版本:0001A )主程式: YT2MP3.py有用到的模組:* requests `pip install requests`* PyQt5 `pip install PyQt5`* youtube_dl `pip install youtube_dl`
+# Youotube2MP3 程式 ( 版本:0001A )主程式: YT2MP3.py有用到的模組:* requests `pip install requests`* PyQt5 `pip install PyQt5`* youtube_dl `pip install youtube_dl`## [Youotube2MP3 執行檔 使用說明](https://ccutmis.github.io/yt2mp3/index.htm)
